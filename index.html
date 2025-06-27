@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gráficas Primitivas - Círculos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="miCanvas" width="400" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById('miCanvas');
+    const ctx = canvas.getContext('2d');
+	
+	// Bordes en negro
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'black';
+
+    // amarillo (LAPIZ)
+    ctx.fillStyle = 'yellow';
+    ctx.beginPath();
+    ctx.moveTo(122, 317);
+    ctx.lineTo(267, 317);
+    ctx.lineTo(260, 288);
+    ctx.lineTo(267, 257);
+    ctx.lineTo(122, 257);
+    ctx.closePath();
+    ctx.fill();
+
+    // Color rosado (LAPIZ)
+    ctx.beginPath();
+    ctx.fillStyle = 'rgb(240,151,202)';
+    ctx.ellipse(78 + 50/2, 258 + 59/2, 50/2, 59/2, 0, 79 * Math.PI / 180, (79 + 203) * Math.PI / 180);
+    ctx.fill();
+	ctx.stroke();
+	
+    // Arco gris (LAPIZ)
+    ctx.beginPath();
+    ctx.fillStyle = 'rgb(153,153,153)';
+    ctx.ellipse(103 + 30/2, 258 + 59/2, 28/2, 59/2, 0, 78 * Math.PI / 180, (78 + 208) * Math.PI / 180);
+    ctx.fill();;
+    ctx.stroke();
+	
+	// Arco amarillo (LAPIZ)
+    ctx.beginPath();
+    ctx.fillStyle = 'yellow';
+    ctx.ellipse(117 + 27/2, 258 + 59/2, 27/2, 59/2, 0, 78 * Math.PI / 180, (78 + 201) * Math.PI / 180);
+    ctx.fill();
+	ctx.stroke();
+
+    // punta madera (LAPIZ)
+    ctx.beginPath();
+    ctx.fillStyle = 'rgb(254,232,165)';
+    ctx.moveTo(267, 257);
+    ctx.lineTo(308, 284);
+    ctx.lineTo(267, 317);
+    ctx.lineTo(260, 288);
+    ctx.closePath();
+    ctx.fill();
+	// borde parte: madera (LAPIZ)
+    ctx.beginPath();
+    ctx.moveTo(267, 317);
+    ctx.lineTo(260, 288);
+    ctx.lineTo(267, 257);
+    ctx.stroke();
+
+    // punta gris (LAPIZ)
+    ctx.beginPath();
+    ctx.fillStyle = 'rgb(153,153,153)';
+    ctx.moveTo(289, 273);
+    ctx.lineTo(308, 284);
+    ctx.lineTo(289, 295);
+    ctx.closePath();
+    ctx.fill();
+    // borde parte: gris (LAPIZ)
+    ctx.beginPath();
+    ctx.ellipse(290 + 3/2, 276 + 19/2, 3/2, 19/2, 0, 95 * Math.PI / 180, (95 + 160) * Math.PI / 180);
+    ctx.stroke();
+    
+	// borde parte: amarilla (LAPIZ)
+    ctx.beginPath();
+    ctx.moveTo(105, 317);
+    ctx.lineTo(267, 317);
+    ctx.lineTo(308, 284);
+    ctx.lineTo(267, 258);
+    ctx.lineTo(105, 258);
+    ctx.stroke();
+
+    // Texto "Yesica"
+    ctx.font = '40px "Berlin Sans FB Demi", sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText('Yesica', 140, 300);
+
+    // Arcos azul (ALAS)
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = 'rgb(234,247,254)';
+	//borde 1 parte: azul (ALAS)
+    ctx.beginPath();
+    ctx.moveTo(161, 120);
+    ctx.bezierCurveTo(170, 30, 229, 50, 220, 90);
+    ctx.fill();
+    ctx.stroke();
+	//borde 2 parte: azul (ALAS)
+    ctx.beginPath();
+    ctx.moveTo(131, 129);
+    ctx.bezierCurveTo(18, 68, 150, 24, 160, 120);
+    ctx.fill();
+    ctx.stroke();
+
+    // Parte 1 amarillo (CUERPO)
+    ctx.fillStyle = 'yellow';
+    ctx.beginPath();
+    ctx.moveTo(74, 196);
+    ctx.bezierCurveTo(98, 95, 276, 95, 280, 198);
+    ctx.fill();
+    ctx.stroke();
+	// Parte 2 amarillo (CUERPO)
+    ctx.beginPath();
+    ctx.moveTo(74, 195);
+    ctx.bezierCurveTo(98, 285, 276, 280, 280, 198);
+    ctx.fill();
+    ctx.stroke();
+
+    // Curva interna 1 (CUERPO)
+    ctx.beginPath();
+    ctx.moveTo(113, 140);
+    ctx.quadraticCurveTo(92, 200, 121, 248);
+    ctx.stroke();
+	// Curva interna 2 (CUERPO)
+    ctx.beginPath();
+    ctx.moveTo(150, 125);
+    ctx.quadraticCurveTo(122, 197, 157, 260);
+    ctx.stroke();
+	// Curva interna 3 (CUERPO)
+    ctx.beginPath();
+    ctx.moveTo(179, 180);
+    ctx.quadraticCurveTo(170, 220, 201, 260);
+    ctx.stroke();
+
+    // Ojo derecho
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.ellipse(242 + 75/2, 92 + 100/2, 85/2, 100/2, 0, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    // Ojo izquierdo
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.ellipse(170 + 98/2, 92 + 110/2, 98/2, 110/2, 0, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    // Pupila izquierda
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.ellipse(206 + 27/2, 127 + 29/2, 27/2, 29/2, 0, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    // Pupila derecha
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(266 + 27/2, 127 + 29/2, 27/2, 29/2, 0, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    // Boca
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(217, 214);
+    ctx.quadraticCurveTo(230, 236, 248, 217);
+    ctx.stroke();
+
+</script>
+
+</body>
+</html>
